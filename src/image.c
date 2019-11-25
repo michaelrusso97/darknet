@@ -480,6 +480,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
             //    class_id, (right + left) / 2, (bot - top) / 2, right - left, bot - top);
 
             printf("\n");
+            printf("Bounding Box: Left=%d, Top=%d, Right=%d, Bottom=%d\n", left, top, right, bot); 
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             if (alphabet) {
                 image label = get_label(alphabet, names[class_id], (im.h*.03)/10);
