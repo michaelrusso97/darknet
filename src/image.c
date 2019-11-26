@@ -239,6 +239,7 @@ void draw_bbox(image a, box bbox, int w, float r, float g, float b)
     int i;
     for(i = 0; i < w; ++i){
         draw_box(a, left+i, top+i, right-i, bot-i, r, g, b);
+        printf("Bounding Box: Left=%d, Top=%d, Right=%d, Bottom=%d\n", left, top, right, bot);
     }
 }
 
@@ -481,6 +482,7 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
 
             printf("\n");
             printf("Bounding Box: Left=%d, Top=%d, Right=%d, Bottom=%d\n", left, top, right, bot); 
+            printf("%d, %d, %d, %d\n", left, bot, right, top);
             draw_box_width(im, left, top, right, bot, width, red, green, blue);
             if (alphabet) {
                 image label = get_label(alphabet, names[class_id], (im.h*.03)/10);
